@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-cicd-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenkins-cicd-demo
+  template:
+    metadata:
+      labels:
+        app: jenkins-cicd-demo
+    spec:
+      containers:
+        - name: app
+          image: jenkins-cicd-demo:latest
+          ports:
+            - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-cicd-demo
+spec:
+  selector:
+    app: jenkins-cicd-demo
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
