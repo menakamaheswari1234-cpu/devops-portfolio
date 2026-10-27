@@ -1,0 +1,5 @@
+apiVersion: v2
+name: gitops-platform-app
+description: Helm chart for GitOps demo app
+version: 0.1.0
+appVersion: "1.0.0"

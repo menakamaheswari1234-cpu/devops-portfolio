@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-platform-demo
+  labels:
+    app: gitops-platform-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gitops-platform-demo
+  template:
+    metadata:
+      labels:
+        app: gitops-platform-demo
+    spec:
+      containers:
+        - name: app
+          image: gitops-platform-demo:latest
+          ports:
+            - containerPort: 5000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitops-platform-demo
+spec:
+  selector:
+    app: gitops-platform-demo
+  ports:
+    - port: 80
+      targetPort: 5000
+      protocol: TCP
+  type: ClusterIP

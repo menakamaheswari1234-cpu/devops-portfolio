@@ -1,0 +1,6 @@
+# This is a placeholder .gitignore for the portfolio project.
+__pycache__/
+.pytest_cache/
+.venv/
+.env
+*.pyc

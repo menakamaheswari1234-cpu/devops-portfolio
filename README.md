@@ -9,6 +9,7 @@ This repository contains five practical DevOps projects for portfolio use.
 3. Ansible Configuration Management
 4. DevSecOps with SonarQube and Trivy
 5. Kubernetes Monitoring with Prometheus and Grafana
+6. GitOps Multi-Environment Platform on AWS
 
 ## Structure
 
@@ -18,6 +19,7 @@ project-02-terraform-aws/
 project-03-ansible-automation/
 project-04-devsecops/
 project-05-kubernetes-monitoring/
+project-06-gitops-platform/
 profile/
 ```
 

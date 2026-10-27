@@ -1,0 +1,10 @@
+{
+  "dashboard": {
+    "title": "GitOps Platform Dashboard",
+    "tags": ["gitops", "platform", "devops"],
+    "timezone": "browser",
+    "schemaVersion": 16,
+    "version": 1,
+    "panels": []
+  }
+}
